@@ -1,6 +1,8 @@
 # CrazyArcade
 For C++/WinAPI PortFolio
 
+Sound, Texture 등 리소스는 제외하고 업로드 되었습니다.
+
 
 ![image](https://user-images.githubusercontent.com/95511792/202637463-8ed83749-0489-40c4-8295-44fbaff11156.png)
 
