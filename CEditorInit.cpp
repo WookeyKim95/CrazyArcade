@@ -103,6 +103,7 @@ void CEditorLevel::CreateUI()
 
 	CExitUI* pExit = new CExitUI;
 	pExit->SetPos(Vec2(650.f, 565.f));
+	pExit->SetScale(Vec2(135.f, 25.f));
 	pExit->SetDelegate(this, (DELEGATE)&CLevel::GetExit);
 	pStageUI->AddChildUI(pExit);
 
