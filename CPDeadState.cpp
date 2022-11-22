@@ -39,12 +39,12 @@ void CPDeadState::finaltick()
 		if (pPlayer->m_Life == 0 && !m_Lost)
 		{
 			// LOSE 문구 출력
-			CTexture* pWinTex = CResMgr::GetInst()->LoadTexture(L"Win", L"Texture\\UI\\Lose.bmp");
+			CTexture* pLoseTex = CResMgr::GetInst()->LoadTexture(L"Lose", L"Texture\\UI\\Lose.bmp");
 
 			CLevel* pCurLevel = CLevelMgr::GetInst()->GetCurLevel();
 
 			CLOSE* pLose = new CLOSE;
-			pLose->SetIdleTex(pWinTex);
+			pLose->SetIdleTex(pLoseTex);
 			pLose->SetPos(Vec2(260.f, 260.f));
 			pCurLevel->AddObject(pLose, LAYER::UI_UP);
 			m_Lost = true;
@@ -68,6 +68,7 @@ void CPDeadState::finaltick()
 			{
 				pPlayer->ChangeState(L"Ready");
 				pPlayer->m_Life -= 1;
+				pPlayer->m_BTrapped = false;
 			}
 
 			else

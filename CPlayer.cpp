@@ -282,7 +282,7 @@ void CPlayer::BeginOverlap(CCollider* _pOther)
 	}
 
 	else if ((_pOther->GetOwner()->ReturnLayer() == LAYER::WAVE || _pOther->GetOwner()->ReturnLayer() == LAYER::WAVE_CENTER
-	|| _pOther->GetOwner()->ReturnLayer() == LAYER::MONSTER_OBJECTILE || _pOther->GetOwner()->ReturnLayer() == LAYER::MONSTER)
+	|| _pOther->GetOwner()->ReturnLayer() == LAYER::MONSTER_OBJECTILE && !m_BTrapped)
 	&& !m_BTrapped && !m_PowerOverwhelming)
 	{
 		ChangeState(L"Trapped");
@@ -481,8 +481,12 @@ void CPlayer::OnOverlap(CCollider* _pOther)
 			if (m_TileCenter == BombPos)
 				m_CanSetBomb = false;
 		}
+	}
 
-
+	else if (_pOther->GetOwner()->ReturnLayer() == LAYER::MONSTER && _pOther->GetOwner()->IsTrapped() == false && !m_PowerOverwhelming && !m_BTrapped)
+	{
+		ChangeState(L"Trapped");
+		m_BTrapped = true;
 	}
 
 }

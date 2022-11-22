@@ -73,24 +73,6 @@ void CEditorLevel::CreateUI()
 
 	CTexture* pStageUITex = CResMgr::GetInst()->LoadTexture(L"Stage", L"Texture\\UI\\mapToolMap.bmp");
 
-	// 타일 텍스쳐 로딩
-	CTexture* pTile0 = CResMgr::GetInst()->LoadTexture(L"Tile0", L"Texture\\Terrain\\Tile\\Tile0.bmp");
-	CTexture* pTile1 = CResMgr::GetInst()->LoadTexture(L"Tile1", L"Texture\\Terrain\\Tile\\Tile1.bmp");
-	CTexture* pTile2 = CResMgr::GetInst()->LoadTexture(L"Tile2", L"Texture\\Terrain\\Tile\\Tile2.bmp");
-	CTexture* pTile3 = CResMgr::GetInst()->LoadTexture(L"Tile3", L"Texture\\Terrain\\Tile\\Tile3.bmp");
-	CTexture* pTile4 = CResMgr::GetInst()->LoadTexture(L"Tile4", L"Texture\\Terrain\\Tile\\Tile4.bmp");
-	CTexture* pTile5 = CResMgr::GetInst()->LoadTexture(L"Tile5", L"Texture\\Terrain\\Tile\\Tile5.bmp");
-	CTexture* pTile6 = CResMgr::GetInst()->LoadTexture(L"Tile6", L"Texture\\Terrain\\Tile\\Tile6.bmp");
-
-	// 타일 리스트에 삽입
-	m_Tilelist.push_back(pTile0);
-	m_Tilelist.push_back(pTile1);
-	m_Tilelist.push_back(pTile2);
-	m_Tilelist.push_back(pTile3);
-	m_Tilelist.push_back(pTile4);
-	m_Tilelist.push_back(pTile5);
-	m_Tilelist.push_back(pTile6);
-
 	CTexture* pSave = CResMgr::GetInst()->LoadTexture(L"SaveButton", L"Texture\\UI\\Save.bmp");
 	CTexture* pLoad = CResMgr::GetInst()->LoadTexture(L"LoadButton", L"Texture\\UI\\Load.bmp");
 	CTexture* pInfo = CResMgr::GetInst()->LoadTexture(L"ButtonInfo", L"Texture\\UI\\KeyInfo.bmp");
@@ -98,7 +80,7 @@ void CEditorLevel::CreateUI()
 	// Panel UI
 	CStageUI* pStageUI = new CStageUI;
 	pStageUI->SetIdleTex(pStageUITex);
-	pStageUI->SetPos({0.f,0.f});
+	pStageUI->SetPos({ 0.f,0.f });
 	AddObject(pStageUI, LAYER::UI);
 
 	CExitUI* pExit = new CExitUI;
@@ -123,6 +105,26 @@ void CEditorLevel::CreateUI()
 	But_Info->SetIdleTex(pInfo);
 	But_Info->SetPos({ 400.f, 0.f });
 	pStageUI->AddChildUI(But_Info);
+
+	// 타일 텍스쳐 로딩
+	CTexture* pTile0 = CResMgr::GetInst()->LoadTexture(L"Tile0", L"Texture\\Terrain\\Tile\\Tile0.bmp");
+	CTexture* pTile1 = CResMgr::GetInst()->LoadTexture(L"Tile1", L"Texture\\Terrain\\Tile\\Tile1.bmp");
+	CTexture* pTile2 = CResMgr::GetInst()->LoadTexture(L"Tile2", L"Texture\\Terrain\\Tile\\Tile2.bmp");
+	CTexture* pTile3 = CResMgr::GetInst()->LoadTexture(L"Tile3", L"Texture\\Terrain\\Tile\\Tile3.bmp");
+	CTexture* pTile4 = CResMgr::GetInst()->LoadTexture(L"Tile4", L"Texture\\Terrain\\Tile\\Tile4.bmp");
+	CTexture* pTile5 = CResMgr::GetInst()->LoadTexture(L"Tile5", L"Texture\\Terrain\\Tile\\Tile5.bmp");
+	CTexture* pTile6 = CResMgr::GetInst()->LoadTexture(L"Tile6", L"Texture\\Terrain\\Tile\\Tile6.bmp");
+
+	// 타일 리스트에 삽입
+	m_Tilelist.push_back(pTile0);
+	m_Tilelist.push_back(pTile1);
+	m_Tilelist.push_back(pTile2);
+	m_Tilelist.push_back(pTile3);
+	m_Tilelist.push_back(pTile4);
+	m_Tilelist.push_back(pTile5);
+	m_Tilelist.push_back(pTile6);
+
+	
 
 
 	// 타일 팔레트

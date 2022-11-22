@@ -16,6 +16,7 @@
 #include "CTileUI.h"
 #include "CBoxUI.h"
 #include "CStageUI.h"
+#include "CExitUI.h"
 
 #include "resource.h"
 
@@ -79,6 +80,12 @@ void CEditorLevel::tick()
 		But_Load->SetDelegate(this, (DELEGATE)&CEditorLevel::LoadTile);
 		But_Load->SetPos({ 660.f, 500.f });
 		pStageUI->AddChildUI(But_Load);
+
+		CExitUI* pExit = new CExitUI;
+		pExit->SetPos(Vec2(650.f, 565.f));
+		pExit->SetScale(Vec2(135.f, 25.f));
+		pExit->SetDelegate(this, (DELEGATE)&CLevel::GetExit);
+		pStageUI->AddChildUI(pExit);
 
 		// 타일 텍스쳐 로딩
 		CTexture* pTile0 = CResMgr::GetInst()->LoadTexture(L"Tile0", L"Texture\\Terrain\\Tile\\Tile0.bmp");
@@ -180,6 +187,12 @@ void CEditorLevel::tick()
 		But_Load->SetDelegate(this, (DELEGATE)&CEditorLevel::LoadTile);
 		But_Load->SetPos({ 660.f, 500.f });
 		pStageUI->AddChildUI(But_Load);
+
+		CExitUI* pExit = new CExitUI;
+		pExit->SetPos(Vec2(650.f, 565.f));
+		pExit->SetScale(Vec2(135.f, 25.f));
+		pExit->SetDelegate(this, (DELEGATE)&CLevel::GetExit);
+		pStageUI->AddChildUI(pExit);
 
 		// 블록 텍스쳐 로딩
 		CTexture* pBox0 = CResMgr::GetInst()->LoadTexture(L"Box0", L"Texture\\Terrain\\Box\\Box0.bmp");
