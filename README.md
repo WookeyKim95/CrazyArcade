@@ -1,7 +1,7 @@
 # CrazyArcade
 For C++/WinAPI PortFolio
 
-[플레이 영상링크](https://youtu.be/q2q2jboT46M)
+[플레이 영상링크](https://youtu.be/EJj_PRnWfNE)
 
 Sound, Texture 등 리소스는 제외하고 업로드 되었습니다.
 
